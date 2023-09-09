@@ -10,4 +10,4 @@ Models => app -> Models
 
 Controllers => app -> HTTP => Controllers -> Api
 
-Special Requests => app -> HTTP => Requests
+Special Requests => app -> HTTP -> Requests
