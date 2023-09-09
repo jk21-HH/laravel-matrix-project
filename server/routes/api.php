@@ -30,7 +30,7 @@ Route::post('/createHero', [HeroController::class, 'createHero']); // done
 Route::get('/heroes/{heroId}', [HeroController::class , 'getHero']); // done
 Route::get('/heroes/by-trainer/{trainerId}', [HeroController::class, 'getHerosByTrainer']); // done
 Route::put('/heroes/assign-to-trainer/{heroId}', [HeroController::class ,'assignToTrainer']); // done
-Route::put('/heroes/unassign-from-trainer/{heroId}', [HeroController::class, 'unassignFromTrainer']); // need to be checked
+Route::put('/heroes/unassign-from-trainer/{heroId}', [HeroController::class, 'unassignFromTrainer']); // done
 Route::post('/heroes/train', [HeroController::class, 'trainHero']); // done - BONUS
 
 Route::get('/trainers/{id}', [TrainerController::class, 'getTrainer']); // done
