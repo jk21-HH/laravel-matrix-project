@@ -8,7 +8,9 @@ Migration files => database -> migrations
 
 Models => app -> Models
 
-Controllers => app -> HTTP => Controllers -> Api
+Controllers => app -> HTTP -> Controllers -> Api
+
+Exception handler => app -> Exception
 
 Special Requests => app -> HTTP -> Requests
 
