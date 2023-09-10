@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('heroes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('ability')->default(0);
+            $table->string('name')->charset('utf8')->collation('utf8_general_ci');
+            $table->tinyInteger('ability')->default(0)->comment('0 - attacker, 1 - defender');
             $table->unsignedBigInteger('trainer_id')->nullable()->unsigned();
 
             // trainer_id is a foreign -> all related records will be deleted in case the trainer will be deleted in trainers table
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreign('trainer_id')->references('id')->on('trainers')->onDelete('cascade');
 
             $table->date('training_start_date')->default(now());
-            $table->integer('suit_colors')->default(0);
+            $table->string('suit_colors')->nullable()->charset('utf8')->collation('utf8_general_ci');
             $table->decimal('starting_power', 10, 2)->default(1.00);
             $table->decimal('current_power', 10, 2)->default(1.00);
 

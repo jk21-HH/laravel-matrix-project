@@ -25,10 +25,10 @@ class CreateHeroRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'ability' => 'integer',
+            'ability' => 'numeric|min:0|max:1',
             'trainer_id' => 'integer',
             'training_start_date' => 'date',
-            'suit_colors' => 'integer', 
+            'suit_colors' => 'string', 
             'starting_power' => 'numeric',
             'current_power' => 'numeric', 
         ];

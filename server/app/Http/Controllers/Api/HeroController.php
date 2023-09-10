@@ -12,6 +12,8 @@ use App\Models\Trainer;
 
 use App\Http\Requests\CreateHeroRequest;
 
+use App\Enums\RoleEnum;
+
 use Carbon\Carbon;
 
 class HeroController extends Controller
@@ -77,6 +79,8 @@ class HeroController extends Controller
                 'message' => 'Hero not found'
             ], 404);
         }
+
+        $hero['ability_description'] = RoleEnum::ATTACKER === $hero->ability ? 'attacker' : 'defender';
 
         // OK status code
 
